@@ -1,0 +1,117 @@
+:root {
+    --texto-claro: #FFFFFF; /* Blanco */
+    --gris-claro: #E0E0E0; /* Gris claro */
+    --azul-pastel: #AEC6CF; /* Azul pastel */
+    --rosa-pastel: #F7C8DA; /* Rosa pastel */
+    --verde-pastel: #B0E57C; /* Verde pastel */
+  
+    --fondo-azul-pastel: #B3CDE0; /* Azul pastel suave */
+    --fondo-lavanda-pastel: #E3D1F4; /* Lavanda pastel */
+    --fondo-rosa-pastel: #F9D5D3; /* Rosa pastel suave */
+    --fondo-menta-pastel: #C8E6C9; /* Menta pastel */
+    --fondo-amarillo-pastel: #FFF9B1; /* Amarillo pastel */
+  }
+
+html *{
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: grid;
+    grid-template-rows: 2fr 2fr ;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+}
+body * {
+    box-sizing: border-box;
+}
+
+
+article {
+    background-color: yellow;
+}
+
+/* header */
+header {
+    background-image: url(../IMG/header-backgroud.jpg);
+    grid-template-areas: "info"
+    "nombre"
+    ".";
+    grid-template-rows: 1fr 1fr 4fr;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: grid;
+    align-content: center;
+    border-bottom: 2px solid #edc;
+
+}
+    header::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #0004;
+        z-index: 2;
+    }
+    #wrap-informacion,#wrap-foto-perfil, #wrap-foto-perfil img,#wrap-nombre{
+        z-index: 3;
+    }
+    #wrap-foto-perfil {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid #edc;
+        position: absolute;
+        bottom: -80px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    #wrap-foto-perfil img {
+        width: 100%;
+        height: 100%;
+    }
+    #wrap-informacion{
+        display: grid;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1em;
+        grid-template-areas: ". edad nacionalidad correo";
+    }
+    #wrap-informacion span{
+        color: var(--texto-claro);
+    }
+    #wrap-nombre {
+        width: 40%;
+        height: 20%;
+        min-width: 300px;
+        margin: auto;
+        text-align: center;
+        position: relative;
+        grid-area: nombre;
+    }
+    #wrap-nombre::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 70%;
+        background: var(--verde-pastel);
+        bottom: 10;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    h2 {
+        color: var(--texto-claro);
+        font-size: 2em;
+    }
+    h1 {
+        color: var(--rosa-pastel);
+        font-size: 1.5em;
+    }
+
